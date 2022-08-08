@@ -1,7 +1,12 @@
 package denshchikov.dmitry.model.dimension
 
+/**
+ * A representation of a two-dimensional space
+ *
+ * @author Dmitry Denshchikov
+ */
 class TwoDimensional : Dimension {
 
-    override val numOfDimensions: Int = 2
+    override val numOfPlanes: Int = 2
 
 }

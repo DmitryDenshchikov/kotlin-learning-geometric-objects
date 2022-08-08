@@ -1,7 +1,12 @@
 package denshchikov.dmitry.model.dimension
 
+/**
+ * A representation of a three-dimensional space
+ *
+ * @author Dmitry Denshchikov
+ */
 class ThreeDimensional : Dimension {
 
-    override val numOfDimensions: Int = 3
+    override val numOfPlanes: Int = 3
 
 }
