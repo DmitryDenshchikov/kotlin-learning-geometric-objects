@@ -5,6 +5,9 @@ plugins {
     id("org.jetbrains.dokka") version "1.7.10"
 }
 
+val ktorVersion = "2.0.3"
+val logbackVersion = "1.2.11"
+
 group = "denshchikov.dmitry"
 version = "1.0-SNAPSHOT"
 
@@ -13,6 +16,13 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-default-headers-jvm:$ktorVersion")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+
     testImplementation(kotlin("test"))
 }
 
