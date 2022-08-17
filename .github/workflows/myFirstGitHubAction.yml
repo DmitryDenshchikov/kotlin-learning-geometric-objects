@@ -24,4 +24,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create release branch
-        run: git checkout -b release/v${{ github.event.inputs.branch_name }}
+        run: git checkout -b ${{ github.event.inputs.branch_name }}
+        
+      - name: Push release branch
+        run: git push origin ${{ github.event.inputs.branch_name }}
