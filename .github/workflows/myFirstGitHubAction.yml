@@ -23,10 +23,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create release branch
-        run: git checkout -b ${{ github.event.inputs.branch_name }}
+        run: git checkout -b release/v9.0.0
         
       - name: Push release branch
-        run: git push origin ${{ github.event.inputs.branch_name }}
+        run: git push origin release/v9.0.0
         
       - name: Create Pull Request
         uses: actions/github-script@v6
@@ -34,7 +34,7 @@ jobs:
           script: |
             const { repo, owner } = context.repo;
             const result = await github.rest.pulls.create({
-              title: 'Merge ${{ github.event.inputs.branch_name }} into release/v1.0.0',
+              title: 'Merge release/v9.0.0 into release/v1.0.0',
               owner,
               repo,
               head: '${{ github.event.inputs.branch_name }}',
